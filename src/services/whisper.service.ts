@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { type AutomaticSpeechRecognitionOutput, AutomaticSpeechRecognitionPipeline, env, pipeline } from '@huggingface/transformers';
 
 env.allowRemoteModels = false
