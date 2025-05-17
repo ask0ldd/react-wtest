@@ -16,6 +16,15 @@ module.exports = {
         'dancing': ['Dancing Script', 'cursive'],
         'instrument': ['Instrument Serif', 'serif'],
       },
+      keyframes: {
+        'slide-in-x': {
+          '0%': { transform: 'translateX(-50px)' },
+          '100%': { transform: 'translateX(0px)' },
+        },
+      },
+      animation: {
+        'slide-in-x': 'slide-in-x 0.5s ease-out forwards',
+      },
     },
     screens: {
       'xs': '480px',      // Extra small devices
