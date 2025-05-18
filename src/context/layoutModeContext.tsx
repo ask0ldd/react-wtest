@@ -19,7 +19,7 @@ interface LayoutModeProviderProps {
 export function LayoutModeProvider({ children }: LayoutModeProviderProps) {
 
     const [layoutModeActive, setLayoutModeActive] = useState(false);
-    const switchLayoutMode = () => setLayoutModeActive((prev) => !prev);
+    const switchLayoutMode = () => setLayoutModeActive((prev) =>  !prev);
 
     const contextValue: LayoutModeContextType = {
         layoutModeActive,
