@@ -1,8 +1,8 @@
 import type IDirective from "../interfaces/IDirective";
 
 export default class AudioNavService{
-    private static navDirectives: Record<string, string> = {};
-    private static globalDirectives : IDirective[] = []
+    private static navDirectives: Record<string, string> = {}
+    private static globalDirectives : Record<string, IDirective> = {}
 
     static addNavDirective(sentences: string[], url: string): void {
         sentences.forEach(sentence => {
@@ -17,11 +17,14 @@ export default class AudioNavService{
 
     // should be grouped by urls
     static addGlobalDirective(directive : IDirective){
-        console.log("global")
-        this.globalDirectives.push(directive)
+        /*console.log("global")
+        const directiveIds = AudioNavService.getAllGlobalDirectives().map(directive => directive.id)
+        if(!directiveIds.includes(directive.id)) this.globalDirectives.push(directive)*/
+        this.globalDirectives[directive.id] = directive
+        // window.dispatchEvent(new Event('newdirective'))
     }
     
     static getAllGlobalDirectives() : IDirective[]{
-        return this.globalDirectives
+        return Object.values(this.globalDirectives)
     }
 }
